@@ -15,7 +15,7 @@ def home():
 @app.route('/predict_api', methods=['POST'])
 
 def predict_api():
-    data=request.jason['data']
+    data=request.json['data']
     print(data)
     print(np.array(list(data.values())).reshape(1,-1))
     new_data=scaler.transform(np.array(list(data.values())).reshape(1,-1))
